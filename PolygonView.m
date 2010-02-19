@@ -35,7 +35,16 @@
 			firstOne=NO;
 		}
 		else {
+			int dashed =[linearOrDashed selectedSegmentIndex];
+			if (dashed){
+				float dash[2]={6.0,6.0};
+				CGContextSetLineDash(context,0,dash,1);
+			}
+			else {
+				CGContextSetLineDash(context, 0, NULL, 0);
+			}
 			CGContextAddLineToPoint(context, point.x, point.y);
+
 		}
 	}
 	CGContextClosePath(context);

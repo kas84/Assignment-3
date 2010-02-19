@@ -10,9 +10,13 @@
 	IBOutlet UILabel *name;
     IBOutlet PolygonShape *polygon;
 	IBOutlet PolygonView *polygonView;
+	IBOutlet UISlider *slider;
+	IBOutlet UISegmentedControl *linearOrDashed;
 }
 - (IBAction)decrease:(id)sender;
 - (IBAction)increase:(id)sender;
+- (IBAction)sliderChanged:(id)sender;
+- (IBAction)segmentedChanged:(id)sender;
 - (void) awakeFromNib;
 - (void) updateInterface:(int)sides;
 - (void) saveToUserDefaults:(int)sides;

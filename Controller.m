@@ -12,6 +12,7 @@
 	int numSides = [self retrieveFromUserDefaults];
 	polygon.maximumNumberOfSides=12;
 	polygon.minimumNumberOfSides=3;
+	slider.value=numSides;
 	[self updateInterface:numSides];
 
 }
@@ -49,5 +50,10 @@
 		val = [standardUserDefaults integerForKey:@"prefs"];
 	return val;
 }
-
+- (IBAction)sliderChanged:(id)sender{
+	[self updateInterface:slider.value];
+}
+- (IBAction)segmentedChanged:(id)sender{
+	[self updateInterface:slider.value];
+}
 @end
